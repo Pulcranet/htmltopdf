@@ -3,21 +3,14 @@ service: htmlToPdf
 provider:
   name: aws
   runtime: nodejs12.x
-  stage: ${opt:stage, 'dev'}
-  environment:
-    S3_BUCKET: your-media-bucket-name
+  stage: ${opt:stage, 'staging'}
+  region: eu-west-1
 
 functions:
   htmlToPdf:
     handler: handler.htmlToPdf
     layers:
       - ${cf:executables-layer-${self:provider.stage}.HtmlToPdfLayerExport}
-    events:
-      - http:
-          path: api/htmltopdf
-          method: get
-          cors: true
-          integration: lambda
 
 # serverless optimization
 package:

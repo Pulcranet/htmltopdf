@@ -1,0 +1,14 @@
+{
+  "html": "<h1>ciao</h1>",
+  "options": {
+    "format": "A4",
+    "zoomFactor": 0.55,
+    "border": "0.5cm",
+    "footer": {
+      "height": "28mm",
+      "contents": {
+        "default": "<span style=\"color: #444;\">{{page}}</span>/<span>{{pages}}</span>"
+      }
+    }
+  }
+}

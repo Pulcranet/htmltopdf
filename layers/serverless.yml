@@ -2,7 +2,8 @@ service: executables-layer
 
 provider:
   name: aws
-  stage: ${opt:stage, 'dev'}
+  stage: ${opt:stage, 'staging'}
+  region: eu-west-1
 
 layers:
   htmlToPdf:
